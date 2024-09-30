@@ -20,6 +20,9 @@ function App() {
   const showAlert = () => {
     WebApp.showAlert('Hey there!');
   };
+  const sendAppData = () => {
+    WebApp.sendData('Super Web App Data!');
+  };
   return (
     <div>
       <div>
@@ -27,7 +30,7 @@ function App() {
       </div>
       <div>
         <div className='Card'>
-          <b>{WebApp.platform}</b>
+          <p>{WebApp.platform}</p>
           <b>Our contract Address</b>
           <div className='Hint'>{contract_address}</div>
           <b>Our contract Balance</b>
@@ -41,6 +44,14 @@ function App() {
           <div>{counter_value ?? 'Loading...'}</div>
         </div>
       </div>
+      <a
+        onClick={() => {
+          sendAppData();
+        }}
+      >
+        Send App Data
+      </a>
+      <br />
       <a
         onClick={() => {
           showAlert();
